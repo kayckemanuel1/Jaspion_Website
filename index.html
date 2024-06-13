@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <link rel="shortcut icon" type="imagex/png" href="icon.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jaspion - Software Livre</title>
+    <style>
+        :root {
+            --background-color: #f4f4f4;
+            --text-color: #333;
+            --primary-color: #1e90ff;
+            --secondary-color: #ff6347;
+            --navbar-background: #222;
+            --navbar-text: #fff;
+            --navbar-hover: #575757;
+            --logo-cetep-filter: brightness(0) invert(1);
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            transition: background-color 0.3s, color 0.3s;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            background-color: var(--navbar-background);
+            padding: 1rem;
+        }
+
+        .navbar .logo {
+            width: 50px;
+            margin-right: 1rem;
+        }
+
+        .navbar a {
+            color: var(--navbar-text);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .navbar a:hover {
+            background-color: var(--navbar-hover);
+        }
+
+        .container {
+            padding: 2rem;
+            position: relative;
+            flex: 1;
+        }
+
+        .home, .downloads, .documentation, .about {
+            display: none;
+        }
+
+        .active {
+            display: block;
+        }
+
+        .downloads a {
+            display: block;
+            margin: 0.5rem 0;
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .downloads a:hover {
+            color: var(--secondary-color);
+        }
+
+        .theme-toggle {
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+            border: none;
+            background-color: transparent;
+            color: var(--navbar-text);
+            transition: color 0.3s;
+        }
+
+        .theme-toggle img {
+            width: 25px;
+            height: 25px;
+        }
+
+        .home img.jaspion-image {
+            max-width: 50%;
+            position: absolute;
+            right: 0;
+            top: 50px;
+            opacity: 0.9;
+        }
+
+        .home-content {
+            max-width: 50%;
+            z-index: 1;
+            position: relative;
+        }
+
+        .logo_cetep {
+            display: block;
+            margin: 1rem auto;
+            width: 75px;
+            filter: brightness(0) invert(1);
+            transition: filter 0.3s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .container > div {
+            animation: fadeIn 0.5s;
+        }
+
+        footer {
+            background-color: var(--navbar-background);
+            padding: 1rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <img src="logo.png" alt="Logo do Jaspion" class="logo">
+        <a href="#" onclick="showSection('home')">Home</a>
+        <a href="#" onclick="showSection('downloads')">Downloads</a>
+        <a href="#" onclick="showSection('documentation')">Documentação</a>
+        <a href="#" onclick="showSection('about')">Sobre</a>
+        <button class="theme-toggle" onclick="toggleTheme()">
+            <img src="sun-icon.svg" alt="Alternar Tema" id="theme-icon">
+        </button>
+    </div>
+
+    <div class="container">
+        <div id="home" class="home active">
+            <div class="home-content">
+                <h1>Bem-vindo ao projeto Jaspion</h1>
+                <p>Jaspion é um software livre, desenvolvido para auxiliar microempreendedores e pequenos comerciantes a agilizar e gerenciar as suas vendas. Com funcionalidades que automatizam tarefas manuais, Jaspion surge como uma solução eficiente e acessível para melhorar a eficiência operacional e gerenciar pequenos negócios sem necessidade de investimentos financeiros. Compatível com diversas plataformas, ele é ideal para computadores com recursos limitados, permitindo a utilização em equipamentos mais antigos.</p>
+            </div>
+            <img src="jaspion-image.png" alt="Imagem do Jaspion" class="jaspion-image">
+        </div>
+
+        <div id="downloads" class="downloads">
+            <h1>Downloads</h1>
+            <p>Escolha uma das opções abaixo para baixar o Jaspion:</p>
+            <a href="https://drive.google.com/file/d/1SZmTS35mAVO-nO6kApPk6bbOsUl9vI74/view?usp=sharing" target="_blank">Google Drive</a>
+            <a href="https://github.com/kayckemanuel1/Jaspion" target="_blank">Github</a>
+            <a href="https://mega.nz/file/RXtjUCxb#dKKj2Fg2sEMDDhjftRJtlBg0ls9Kdm0q0oR0FIGPmPA" target="_blank">Mega</a>
+            <a href="https://www.mediafire.com/file/z8titpgrt0m1t0j/Jaspion.zip/file" target="_blank">Mediafire</a>
+            
+        </div>
+
+        <div id="documentation" class="documentation">
+            <h1>Documentação</h1>
+            <p>Tutorias [Em breve]</p>
+            <a href="Youtube.com" target="_blank">Youtube</a>
+            <p>Manual do Usuário [Em breve]</p>
+            <a href="Youtube.com" target="_blank">Download</a>
+            <p>Documentação Técnica [Em breve]</p>
+            <a href="Youtube.com" target="_blank">Download</a>
+            <p>Relatório de desenvolvimento [Em breve]</p>
+            <a href="Youtube.com" target="_blank">Download</a>
+            <p>Código Fonte/Open source</p>
+            <a href="https://github.com/kayckemanuel1/Jaspion" target="_blank">Github</a>
+            <p>Licença do programa</p>
+            <a href="https://www.gnu.org/licenses/agpl-3.0.txt" target="_blank">GPL-3.0-apenas ou GPL-3.0-ou-posterior</a>
+        </div>
+
+        <div id="about" class="about">
+            <h1>Sobre</h1>
+            <p>O projeto Jaspion começou a ser desenvolvido como parte de um projeto educacional para implementar o método de Aprendizagem Baseada em Problemas (PBL) dentro do colégio CETEP João Campos. Iniciado como um simples programa de linha de comando para auxiliar operadores de caixa, ele evoluiu para uma ferramenta completa com interface gráfica e funcionalidades avançadas.  E pretendemos estar sempre atualizando, colocando novas funcionalidades e melhorando ele. Nossa missão é fornecer uma solução gratuita, acessível e eficaz para pequenos negócios, ajudando-os a crescer e prosperar.</p>
+            <h3>Agradecimentos</h3>
+                <p>A coordenadora Ana Lise e a diretora Ingrid Arapiraca por acreditarem e tornarem possível este projeto.</p>
+                <p>A Professora Anne Moraes por sempre nos incentivar e apoiar nosso projeto.</p>
+                <p>A professora Hildiane pelo incentivo e ajuda no desenvolvimento do relatório.</p>
+                <p>A todos os professores do curso técnico por nos fornecerem o conhecimento, as habilidades e a ambição necessárias para o desenvolvimento deste projeto.</p>
+                <p>A todas as demais pessoas que fazem parte da comunidade do colégio CETEP João Campos por tornarem a escola um ambiente propício à educação.</p>
+        </div>
+    </div>
+
+    <footer>
+        <img src="logo_cetep.png" alt="Logo do CETEP" class="logo_cetep">
+    </footer>
+
+    <script>
+        function showSection(sectionId) {
+            document.querySelectorAll('.container > div').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(sectionId).classList.add('active');
+        }
+
+        function toggleTheme() {
+            const root = document.documentElement;
+            const isDarkTheme = root.style.getPropertyValue('--background-color') === '#333';
+            const themeIcon = document.getElementById('theme-icon');
+
+            root.style.setProperty('--background-color', isDarkTheme ? '#f4f4f4' : '#333');
+            root.style.setProperty('--text-color', isDarkTheme ? '#333' : '#fff');
+            root.style.setProperty('--navbar-background', isDarkTheme ? '#333' : '#222');
+            root.style.setProperty('--navbar-text', isDarkTheme ? '#fff' : '#fff');
+            root.style.setProperty('--navbar-hover', isDarkTheme ? '#575757' : '#444');
+            root.style.setProperty('--logo-cetep-filter', isDarkTheme ? 'brightness(0) invert(1)' : 'none');
+
+            themeIcon.src = isDarkTheme ? 'moon-icon.svg' : 'sun-icon.svg';
+            themeIcon.alt = isDarkTheme ? 'Tema Escuro' : 'Tema Claro';
+        }
+    </script>
+</body>
+</html>
