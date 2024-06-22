@@ -31,10 +31,11 @@
 
         .navbar {
             display: flex;
-            justify-content: start;
+            justify-content: space-between;
             align-items: center;
             background-color: var(--navbar-background);
             padding: 1rem;
+            flex-wrap: wrap;
         }
 
         .navbar .logo {
@@ -89,17 +90,16 @@
         }
 
         .documentation-link {
-    display: block;
-    margin: 0.5rem 0;
-    color: var(--primary-color); /* Cor do link */
-    text-decoration: none;
-    transition: color 0.3s;
-                    }
+            display: block;
+            margin: 0.5rem 0;
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
 
-    .documentation-link:hover {
-        color: var(--secondary-color); /* Cor do link ao passar o mouse */
-    }
-
+        .documentation-link:hover {
+            color: var(--secondary-color);
+        }
 
         .theme-toggle img {
             width: 25px;
@@ -107,7 +107,7 @@
         }
 
         .home img.jaspion-image {
-            max-width: 50%;
+            max-width: 100%;
             position: absolute;
             right: 0;
             top: 50px;
@@ -115,7 +115,7 @@
         }
 
         .home-content {
-            max-width: 50%;
+            max-width: 100%;
             z-index: 1;
             position: relative;
         }
@@ -142,6 +142,39 @@
             padding: 1rem;
             text-align: center;
         }
+
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+            }
+
+            .navbar a {
+                padding: 0.5rem 0;
+            }
+
+            .home img.jaspion-image {
+                display: none;
+            }
+
+            .home-content {
+                max-width: 100%;
+            }
+
+            .container {
+                padding: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .navbar .logo {
+                width: 40px;
+            }
+
+            .theme-toggle img {
+                width: 20px;
+                height: 20px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -162,7 +195,6 @@
                 <h1>Bem-vindo à versão beta do projeto Jaspion</h1>
                 <p>Jaspion é um software livre, desenvolvido para auxiliar microempreendedores e pequenos comerciantes a agilizar e gerenciar as suas vendas. Com funcionalidades que automatizam tarefas manuais, Jaspion surge como uma solução eficiente e acessível para melhorar a eficiência operacional e gerenciar pequenos negócios sem necessidade de investimentos financeiros. Compatível com diversas plataformas, ele é ideal para computadores com recursos limitados, permitindo a utilização em equipamentos mais antigos.</p>
             </div>
-            <img src="jaspion-image.png" alt="Imagem do Jaspion" class="jaspion-image">
         </div>
 
         <div id="downloads" class="downloads">
@@ -172,7 +204,6 @@
             <a href="https://github.com/kayckemanuel1/Jaspion" target="_blank">Github</a>
             <a href="https://mega.nz/file/RXtjUCxb#dKKj2Fg2sEMDDhjftRJtlBg0ls9Kdm0q0oR0FIGPmPA" target="_blank">Mega</a>
             <a href="https://www.mediafire.com/file/z8titpgrt0m1t0j/Jaspion.zip/file" target="_blank">Mediafire</a>
-            
         </div>
 
         <div id="documentation" class="documentation">
@@ -195,11 +226,11 @@
             <h1>Sobre</h1>
             <p>O projeto Jaspion começou a ser desenvolvido como parte de um projeto educacional para implementar o método de Aprendizagem Baseada em Problemas (PBL) dentro do colégio CETEP João Campos. Iniciado como um simples programa de linha de comando para auxiliar operadores de caixa, ele evoluiu para uma ferramenta completa com interface gráfica e funcionalidades avançadas.  E pretendemos estar sempre atualizando, colocando novas funcionalidades e melhorando ele. Nossa missão é fornecer uma solução gratuita, acessível e eficaz para pequenos negócios, ajudando-os a crescer e prosperar.</p>
             <h3>Agradecimentos</h3>
-                <p>A coordenadora Ana Lise e a diretora Ingrid Arapiraca por acreditarem e tornarem possível este projeto.</p>
-                <p>A Professora Anne Moraes por sempre nos incentivar e apoiar nosso projeto.</p>
-                <p>A professora Hildiane pelo incentivo e ajuda no desenvolvimento do relatório.</p>
-                <p>A todos os professores do curso técnico por nos fornecerem o conhecimento, as habilidades e a ambição necessárias para o desenvolvimento deste projeto.</p>
-                <p>A todas as demais pessoas que fazem parte da comunidade do colégio CETEP João Campos por tornarem a escola um ambiente propício à educação.</p>
+            <p>A coordenadora Ana Lise e a diretora Ingrid Arapiraca por acreditarem e tornarem possível este projeto.</p>
+            <p>A Professora Anne Moraes por sempre nos incentivar e apoiar nosso projeto.</p>
+            <p>A professora Hildiane pelo incentivo e ajuda no desenvolvimento do relatório.</p>
+            <p>A todos os professores do curso técnico por nos fornecerem o conhecimento, as habilidades e a ambição necessárias para o desenvolvimento deste projeto.</p>
+            <p>A todas as demais pessoas que fazem parte da comunidade do colégio CETEP João Campos por tornarem a escola um ambiente propício à educação.</p>
         </div>
     </div>
 
